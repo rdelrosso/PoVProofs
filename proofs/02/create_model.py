@@ -4,6 +4,7 @@ import pymongo
 import datetime
 import random
 import demo_settings
+import certifi
 
 def create_documents(collection):
     collection.drop()
@@ -50,7 +51,8 @@ def write_data(collection, docs):
 
 if __name__ == "__main__":
     try:
-        conn = pymongo.MongoClient(demo_settings.URI_STRING)
+        #Changed pymongo client to solve issues on db connections
+        conn = pymongo.MongoClient(demo_settings.URI_STRING,tls=True, tlsCAFile=certifi.where())
         print("Connected to MongoDB")
 
         db = conn["FLEXIBLE"]
