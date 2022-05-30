@@ -1,0 +1,11 @@
+[
+    {
+        "name": "myFunc",
+        "private": true
+    },
+    {
+        "name": "Atlas_Triggers_trigger0_1641395370",
+        "private": false,
+        "can_evaluate": {}
+    }
+]

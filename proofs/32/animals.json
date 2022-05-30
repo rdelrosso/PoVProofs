@@ -1,0 +1,6 @@
+{
+    "_id":{"$inc": {"start": 0}},
+    "name": "$animal",
+    "age": "$age",
+    "description":{"$paragraph":{"sentences":1}}
+}

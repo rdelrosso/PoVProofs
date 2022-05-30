@@ -1,0 +1,18 @@
+{
+    "region": { "$number": { "min": 0, "max": 1999 }},
+    "firstname": "$first",
+    "lastname": "$last",
+    "cell": { "$number": { "min": 1111111111, "max": 9999999999 }},
+    "email": "$email",
+    "yob": { "$date": { "min": "1930-01-01", "max": "2016-12-31" }},
+    "gender": "$gender",
+    "address": {
+      "number": { "$number": { "min": 1, "max": 9999 }},
+      "street": { "$street": { "country": "us" }},
+      "city": "$city",
+      "state": { "$state": { "country": "us" }},
+      "zip": "$zip",
+      "location": { "$point": { "long_lim": [-118.668469, -82.062023], "lat_lim": [32.924436, 41.679986]}}
+    },
+    "animals": {"$array": {"of": {"$integer": {"min":1, "max": 1000}},"number": {"$integer": {"min": 0, "max": 10}}}}
+}

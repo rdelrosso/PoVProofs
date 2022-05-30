@@ -1,0 +1,4 @@
+MONGO_IMPORT_HOST="<Your Atlas Host string>"
+MONGO_SHELL_HOST="<Your Mongo Shell string>"
+USER="<Your Atlas Username>"
+PASS="<Your Atlas Password>"

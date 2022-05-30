@@ -1,0 +1,2 @@
+rootProject.name='Airbnb bookings'
+include ':app'

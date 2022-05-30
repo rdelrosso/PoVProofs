@@ -1,0 +1,21 @@
+{
+    "id": "5f4614dfd1f4112edeffbad8",
+    "name": "trigger0",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT",
+            "UPDATE",
+            "REPLACE",
+            "DELETE"
+        ],
+        "database": "sample_airbnb",
+        "collection": "listingsAndReviews",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "full_document": true,
+        "unordered": false
+    },
+    "function_name": "myFunc",
+    "disabled": false
+}

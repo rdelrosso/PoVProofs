@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/bookedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Body1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/confirmedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Body2" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/notAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Notification.Title" />
+
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookButton"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/bookStay" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelButton"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancelStay" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

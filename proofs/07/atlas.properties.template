@@ -1,0 +1,12 @@
+[Atlas]
+api_public_key=<public.key>
+api_private_key=<private.key>
+atlas_user=main_user
+atlas_pwd=<pwd>
+project_name=XXXX YYYY Demo Project
+cluster_name=auto-scale-test
+cluster_region=EU_WEST_2
+
+# Uncomment this line to ignore errors if the cluster is already running when we try and create it
+#cluster_ignore_running=true
+

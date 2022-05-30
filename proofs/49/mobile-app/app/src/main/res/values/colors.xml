@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--   color for the app bar and other primary UI elements -->
+    <color name="colorPrimary">#13AA52</color>
+    <!--   a darker variant of the primary color, used for
+           the status bar (on Android 5.0+) and contextual app bars -->
+    <color name="colorPrimaryDark">#116149</color>
+    <!--   a secondary color for controls like checkboxes and text fields -->
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="cloud">#FAFBFC</color>
+    <color name="available">#B9EACD</color>
+    <color name="notAvailable">#E7EEEC</color>
+    <color name="booked">#C5E4F2</color>
+    <color name="confirmed">#D5D4F9</color>
+
+</resources>

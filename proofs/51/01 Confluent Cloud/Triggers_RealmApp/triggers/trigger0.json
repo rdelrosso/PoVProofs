@@ -1,0 +1,26 @@
+{
+    "id": "61d5b4af9f5076cb5ba7e787",
+    "name": "trigger0",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "INSERT"
+        ],
+        "database": "sample_kafka",
+        "collection": "playerMatchesRaw",
+        "service_name": "Cluster1",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "Atlas_Triggers_trigger0_1641395370"
+            }
+        }
+    }
+}

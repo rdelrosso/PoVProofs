@@ -1,0 +1,7 @@
+{
+    "config_version": 20210101,
+    "app_id": "fts-pov-ltrdo",
+    "name": "FTS-PoV",
+    "location": "IE",
+    "deployment_model": "LOCAL"
+}

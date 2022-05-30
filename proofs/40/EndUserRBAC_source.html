@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4/stitch.js"></script>
+    <script>
+      // Initialize the App Client
+      const client = stitch.Stitch.initializeDefaultAppClient("<APP_ID>");
+      // Get a MongoDB Service Client
+      const mongodb = client.getServiceClient(
+        stitch.RemoteMongoClient.factory,
+        "mongodb-atlas"
+      );
+      // Get a reference to the database
+      const db = mongodb.db("sample_supplies");
+
+  function displayResults() {
+  db.collection("sales")
+    .find({}, {limit: 15})
+    .toArray()
+    .then(docs => {
+      const html = docs.map(doc => `<tr><td>${doc.saleDate}</td><td>${doc.storeLocation}</td><td>${doc.couponUsed}</td><td>${doc.purchaseMethod}</td></tr>`);
+      document.getElementById("records").innerHTML = `<table border=1><tr><th><font color="red">Sale Date</font></th><th>Store Location</th><th><font color="red">Coupon Used</font></th><th>Purchase Method</th></tr>`+html+`</table>`;
+    });
+  }
+        
+function logInMarketing(){
+    client.auth
+    .loginWithCredential(new stitch.UserPasswordCredential("marketing@yahoo.com", "password123"))
+    .then(displayResults)
+    .catch(console.error);
+        }
+        
+function logInSales(){
+    client.auth
+    .loginWithCredential(new stitch.UserPasswordCredential("sales@yahoo.com", "password123"))
+    .then(displayResults)
+    .catch(console.error);
+        }
+        
+function logOut(){
+    console.log("logout", client.auth.user.id);
+    client.auth
+    .logout().catch(console.error);
+    client.auth
+    .loginWithCredential(new stitch.AnonymousCredential())
+    .then(displayResults)
+    .catch(console.error);
+}
+    </script>
+  </head>
+ <body>
+    <h3>END USER RBAC</h3>
+    <div id="content">
+      <p><b>According to Stitch Roles and Fields Restrictions</b>, you won't see some fields from other areas/users.</p>
+      <p>
+          1. Login as Marketing. As Marketing we simulate you don't need to see <b><font color="red">"Sale Date" </b></font>information.
+        </p>
+        <p>
+          2. Login as Sales. As Sales we simulate you can see <b><font color="green">All Data</b></font>.
+      </p>
+        <p>
+          3. Logout. If you logout, we simulate a Default role is applied and you won't see neither <b><font color="red">"Sale Date"</b></font> nor <b><font color="red">"Coupon Used"</b></font>.
+      </p>
+        <br><input type="submit" value = "Login as Marketing" onClick="logInMarketing()" style="height:80px; width:120px"/>
+            <input type="submit" value = "Login as Sales" onClick="logInSales()" style="height:80px; width:120px"/>
+        <br>
+    </div>
+    <hr>
+    <div id="records"></div>
+     <br>
+     <input type="submit" value = "Logout" onClick="logOut()"/>
+  </body>
+</html>

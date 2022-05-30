@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Airbnb Bookings</string>
+    <string name="username">Email</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create account</string>
+    <string name="login">Login</string>
+    <string name="logout">Log out</string>
+    <string name="bookStay">Book Stay</string>
+    <string name="cancelStay">Cancel Stay</string>
+</resources>

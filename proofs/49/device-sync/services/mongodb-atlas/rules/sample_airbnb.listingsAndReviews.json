@@ -1,0 +1,56 @@
+{
+    "collection": "listingsAndReviews",
+    "database": "sample_airbnb",
+    "id": "5f4614dfd1f4112edeffbad5",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "insert": true,
+            "delete": true,
+            "additional_fields": {}
+        }
+    ],
+    "schema": {
+        "properties": {
+          "_id": {
+            "bsonType": "string"
+          },
+          "name": {
+            "bsonType": "string"
+          },
+          "property_type": {
+            "bsonType": "string"
+          },
+          "bookingRequests": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object",
+              "properties": {
+                "booked": {
+                  "bsonType": "bool"
+                },
+                "bookedAt": {
+                  "bsonType": "date"
+                },
+                "bookedByUserId": {
+                  "bsonType": "string"
+                },
+                "confirmed": {
+                  "bsonType": "bool"
+                },
+                "confirmedAt": {
+                  "bsonType": "date"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "_id",
+          "name",
+          "property_type"
+        ],
+        "title": "Listing"
+      }
+}

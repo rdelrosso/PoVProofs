@@ -1,0 +1,6 @@
+// Delete new generated sales documents...
+db.sales.deleteMany( { saleDate : { $gte : new Date('2018') } } );
+
+// Drop new collections created by the triggers...
+db.report.drop()
+db.events.drop()
