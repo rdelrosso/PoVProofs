@@ -2,10 +2,11 @@
 
 import pymongo
 import demo_settings
+import certifi
 
 if __name__ == "__main__":
     try:
-        conn = pymongo.MongoClient(demo_settings.URI_STRING)
+        conn = pymongo.MongoClient(demo_settings.URI_STRING,tls=True, tlsCAFile=certifi.where())
         print("Connected to MongoDB")
 
         db = conn["FLEXIBLE"]

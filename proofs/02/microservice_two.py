@@ -5,6 +5,7 @@ from bson.json_util import dumps
 import time
 import random
 import demo_settings
+import certifi
 
 def read_data(collection, doc_id):
     # dictionary to be added in the database
@@ -14,7 +15,7 @@ def read_data(collection, doc_id):
 
 if __name__ == "__main__":
     try:
-        conn=pymongo.MongoClient(demo_settings.URI_STRING)
+        conn=pymongo.MongoClient(demo_settings.URI_STRING,tls=True, tlsCAFile=certifi.where())
 
         print("Microservice Two - connected to MongoDB\n")
 

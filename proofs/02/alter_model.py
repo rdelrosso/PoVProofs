@@ -5,6 +5,7 @@ import datetime
 import random
 import demo_settings
 from pymongo import UpdateOne
+import certifi
 
 def alter_model(collection):
     pipeline = [{'$sample': {'size': demo_settings.NUM_SAMPLING}}]
@@ -39,7 +40,7 @@ def add_newfields(emp_no):
 
 if __name__ == "__main__":
     try:
-        conn = pymongo.MongoClient(demo_settings.URI_STRING)
+        conn = pymongo.MongoClient(demo_settings.URI_STRING,tls=True, tlsCAFile=certifi.where())
         print("Connected to MongoDB")
 
         db = conn["FLEXIBLE"]
